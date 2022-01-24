@@ -34,5 +34,3 @@ def get_candidates():
         candidates_urls = scraper.scrape_candidates(next_page_content)
         next_page = scraper.scrape_next_page_link(next_page_content)
         current_page = get_current_page(next_page)
-
-get_candidates()
