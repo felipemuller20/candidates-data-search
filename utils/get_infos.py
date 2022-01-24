@@ -1,9 +1,13 @@
+import re
+from unidecode import unidecode
+
+
 def get_name_and_score(selector):
     infos = selector.css("div::text").getall()
     name = infos[0].strip()
     score = infos[1].strip()
     return {
-        "name": name,
+        "name": unidecode(re.sub(r'[^\w\s]','',name)).upper(),
         "score": score
     }
 

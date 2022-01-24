@@ -9,6 +9,7 @@ BASE_URL = config("BASE_URL")
 def get_candidates():
     database.create_database()
     database.create_table()
+
     content = scraper.fetch(BASE_URL) 
     candidates_urls = scraper.scrape_candidates(content) # ['/candidate/178.422.117-11', '/candidate/012.346.857-44']
     next_page = scraper.scrape_next_page_link(content) # "/approvals/2"
