@@ -6,7 +6,7 @@ class Candidate:
         if self.cpf_is_valid(cpf):
             self.cpf = cpf
         else:
-            print("O CPF " + cpf + "é inválido.")
+            print(f"O CPF {cpf} é invalido")
             self.cpf = None
 
     

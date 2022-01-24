@@ -19,7 +19,8 @@ def fetch(url):
     }
 
 
-def scrape_candidates(html_content): # Exemplo de retorno: ['/candidate/178.422.117-11', '/candidate/012.346.857-44']
+
+def scrape_candidates(html_content): 
     if html_content:
         selector = Selector(html_content["content"])
         candidates_list = []
@@ -30,7 +31,8 @@ def scrape_candidates(html_content): # Exemplo de retorno: ['/candidate/178.422.
     return None
 
 
-def scrape_next_page_link(html_content): #  Exemplo de retorno: "/approvals/2"
+
+def scrape_next_page_link(html_content):
     if html_content:
         selector = Selector(html_content["content"])
         next_page = selector.css("div a::attr(href)").get()
@@ -40,7 +42,7 @@ def scrape_next_page_link(html_content): #  Exemplo de retorno: "/approvals/2"
         return None
 
 
-def scrape_candidate_infos(html_content): # content = https://sample-university-site.herokuapp.com/candidate/178.422.117-11
+def scrape_candidate_infos(html_content):
     selector = Selector(html_content["content"])
     infos = utils.get_infos.get_name_and_score(selector)
     name = infos["name"]

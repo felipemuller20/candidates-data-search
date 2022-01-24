@@ -10,22 +10,24 @@ def store_candidates(candidates_urls):
             candidate_content = scraper.fetch(BASE_URL + candidate)
             candidate_info = scraper.scrape_candidate_infos(candidate_content)
             if candidate_info.cpf:
-                database.add_student(candidate_info)
+                already_registered = database.get_student(candidate_info.cpf)
+                if not already_registered:
+                    print(f"CPF {candidate_info.cpf} registrado com sucesso")
+                    database.add_student(candidate_info)
+                else:
+                    print(f"CPF {candidate_info.cpf} já foi registrado anteriormente.")
 
 
 def get_current_page(next_page):
     return int(next_page.split('/approvals/')[1]) - 1
 
 def get_candidates():
-    database.create_database()
-    database.create_table()
-
     content = scraper.fetch(BASE_URL) 
-    candidates_urls = scraper.scrape_candidates(content) # ['/candidate/178.422.117-11', '/candidate/012.346.857-44']
-    next_page = scraper.scrape_next_page_link(content) # "/approvals/2"
+    candidates_urls = scraper.scrape_candidates(content)
+    next_page = scraper.scrape_next_page_link(content)
     current_page = get_current_page(next_page)
     while(next_page and candidates_urls):
-        print("Buscando candidatos página " + str(current_page))
+        print(f"Buscando candidatos - Página {str(current_page)}")
         store_candidates(candidates_urls)
 
         next_page_content = scraper.fetch(BASE_URL + next_page)

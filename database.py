@@ -1,5 +1,4 @@
 import mysql.connector
-from Candidate import Candidate
 from decouple import config
 
 
@@ -18,13 +17,13 @@ mydb = mysql.connector.connect(
 )
 
 def create_database():
-    create_database = "CREATE DATABASE IF NOT EXISTS " + DB_NAME
+    create_database = f"CREATE DATABASE IF NOT EXISTS {DB_NAME}"
     mydb.cursor().execute(create_database)
     mydb.commit()
 
 
 def create_table():
-    mydb.cursor().execute("USE " + DB_NAME)
+    mydb.cursor().execute(f"USE {DB_NAME}")
     create_table = '''CREATE TABLE IF NOT EXISTS `candidates` (
         `id` int(11) NOT NULL AUTO_INCREMENT,
         `name` varchar(255) NOT NULL,
@@ -37,8 +36,16 @@ def create_table():
 
 
 def add_student(student):
+    mydb.cursor().execute(f"USE {DB_NAME}")
     name = student.name
     cpf = student.cpf
     score = student.score
     mydb.cursor().execute('INSERT INTO candidates (name, cpf, score) VALUES (%s, %s, %s)', (name, cpf, score))
     mydb.commit()
+
+
+def get_student(cpf):
+    cursor = mydb.cursor(buffered=True)
+    cursor.execute(f"USE {DB_NAME}")
+    cursor.execute("SELECT cpf FROM candidates WHERE cpf = " + cpf)
+    return cursor.fetchone()
