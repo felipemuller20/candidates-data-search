@@ -15,11 +15,12 @@ def store_candidates(candidates_urls):
                     print(f"CPF {candidate_info.cpf} registrado com sucesso")
                     database.add_student(candidate_info)
                 else:
-                    print(f"CPF {candidate_info.cpf} já foi registrado anteriormente.")
+                    print(f"CPF {candidate_info.cpf} já registrado anteriormente.")
 
 
 def get_current_page(next_page):
-    return int(next_page.split('/approvals/')[1]) - 1
+    if next_page:
+        return int(next_page.split('/approvals/')[1]) - 1
 
 def get_candidates():
     content = scraper.fetch(BASE_URL) 
@@ -34,3 +35,4 @@ def get_candidates():
         candidates_urls = scraper.scrape_candidates(next_page_content)
         next_page = scraper.scrape_next_page_link(next_page_content)
         current_page = get_current_page(next_page)
+    print("Todos os dados foram coletados.")
