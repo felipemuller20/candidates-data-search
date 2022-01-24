@@ -1,6 +1,5 @@
 import requests
 import utils.get_infos
-import database
 from Candidate import Candidate
 from parsel import Selector
 

@@ -5,6 +5,7 @@ from decouple import config
 
 BASE_URL = config("BASE_URL")
 
+
 def store_candidates(candidates_urls):
     for candidate in candidates_urls:
             candidate_content = scraper.fetch(BASE_URL + candidate)
@@ -22,8 +23,9 @@ def get_current_page(next_page):
     if next_page:
         return int(next_page.split('/approvals/')[1]) - 1
 
+
 def get_candidates():
-    content = scraper.fetch(BASE_URL) 
+    content = scraper.fetch(BASE_URL)
     candidates_urls = scraper.scrape_candidates(content)
     next_page = scraper.scrape_next_page_link(content)
     current_page = get_current_page(next_page)
