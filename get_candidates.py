@@ -12,7 +12,6 @@ def get_candidates():
     content = scraper.fetch(BASE_URL) 
     candidates_urls = scraper.scrape_candidates(content) # ['/candidate/178.422.117-11', '/candidate/012.346.857-44']
     next_page = scraper.scrape_next_page_link(content) # "/approvals/2"
-    # while(next_page and candidate_urls):
     while(next_page and candidates_urls):
         print(next_page)
         for candidate in candidates_urls:
