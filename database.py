@@ -1,4 +1,5 @@
 import mysql.connector
+from Candidate import Candidate
 from decouple import config
 
 
@@ -36,8 +37,8 @@ def create_table():
 
 
 def add_student(student):
-    name = student["name"]
-    cpf = student["cpf"]
-    score = student["score"]
+    name = student.name
+    cpf = student.cpf
+    score = student.score
     mydb.cursor().execute('INSERT INTO candidates (name, cpf, score) VALUES (%s, %s, %s)', (name, cpf, score))
     mydb.commit()
