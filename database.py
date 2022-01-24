@@ -10,9 +10,9 @@ DB_NAME = config("DB_NAME")
 
 
 mydb = mysql.connector.connect(
-  host=HOST,
+  host=DB_HOST,
   user=DB_USER,
-  password=PASSWORD,
+  password=DB_PASSWORD,
   port=PORT
 )
 
@@ -23,10 +23,10 @@ def create_database():
 
 
 def create_table():
-    mydb.cursor().execute("USE `testando`;")
-    create_table = '''CREATE TABLE IF NOT EXISTS `students` (
+    mydb.cursor().execute("USE " + DB_NAME)
+    create_table = '''CREATE TABLE IF NOT EXISTS `candidates` (
         `id` int(11) NOT NULL AUTO_INCREMENT,
-        `name` varchar(50) NOT NULL,
+        `name` varchar(255) NOT NULL,
         `cpf` varchar(11) NOT NULL,
         `score` float NOT NULL,
         PRIMARY KEY (`id`)
@@ -39,5 +39,5 @@ def add_student(student):
     name = student["name"]
     cpf = student["cpf"]
     score = student["score"]
-    mydb.cursor().execute('INSERT INTO students (name, cpf, score) VALUES (%s, %s, %s)', (name, cpf, score))
+    mydb.cursor().execute('INSERT INTO candidates (name, cpf, score) VALUES (%s, %s, %s)', (name, cpf, score))
     mydb.commit()

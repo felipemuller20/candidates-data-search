@@ -1,6 +1,7 @@
 import requests
+import utils.get_infos
+import database
 from parsel import Selector
-import get_infos
 
 
 def fetch(url):
@@ -35,11 +36,11 @@ def scrape_next_page_link(html_content): #  Exemplo de retorno: "/approvals/2"
     return None
 
 
-def scrape_candidate_infos(html_content):
+def scrape_candidate_infos(html_content): # content = https://sample-university-site.herokuapp.com/candidate/178.422.117-11
     selector = Selector(html_content["content"])
-    infos = get_infos.get_name_and_score(selector)
+    infos = utils.get_infos.get_name_and_score(selector)
     return {
         "name": infos["name"],
         "score": infos["score"],
-        "cpf": get_infos.get_candidate_cpf(html_content["url"])
+        "cpf": utils.get_infos.get_candidate_cpf(html_content["url"])
     }
