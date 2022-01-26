@@ -21,7 +21,7 @@ A lista fictícia utilizada neste projeto pode ser acessada através [deste link
 
 ## Configurações iniciais
 
-Este projeto utiliza o banco de dados MySQL, portanto, antes de iniciar, é importante verificar se o MySQL está ativo. No terminal, utilize os comandos:
+Este projeto utiliza o banco de dados MySQL, portanto, antes de iniciar, é importante verificar se o MySQL está ativo. No terminal Unix, utilize os comandos:
 
 - `systemctl status mysql` para verificar o status do banco;
 - `systemctl start mysql` para ativar o banco, caso ele esteja desativado.
@@ -29,7 +29,7 @@ Este projeto utiliza o banco de dados MySQL, portanto, antes de iniciar, é impo
 Agora que o MySQL está ativo, clone o projeto:
 
 - `git clone git@github.com:felipemuller20/candidates-data-search.git`
-- `cd candidates-data-search.git`
+- `cd candidates-data-search/`
 
 ## Configurando variáveis de ambiente
 
