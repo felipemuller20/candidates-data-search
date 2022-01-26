@@ -33,7 +33,10 @@ Agora que o MySQL está ativo, clone o projeto:
 
 ## Configurando variáveis de ambiente
 
-O projeto utiliza algumas variáveis de ambiente que precisam ser configuradas. Para isso, renomeie o arquivo `.env.dev` para `.env`. Este arquivo possui as informações utilizadas para realizar a conexão com o seu banco de dados MySQL. Portanto, se necessário, altere o valor das variáveis `DB_HOST`, `DB_USER`, `DB_PASSWORD` e `PORT` para os valores correspondentes à sua conexão.
+O projeto utiliza algumas variáveis de ambiente que precisam ser configuradas. Para isso:
+
+- **Renomeie o arquivo `.env.dev` para `.env`**. Este arquivo possui as informações utilizadas para realizar a conexão com o seu banco de dados MySQL;
+- Se necessário, **altere o valor das variáveis `DB_HOST`, `DB_USER`, `DB_PASSWORD` e `PORT` para os valores correspondentes à sua conexão**.
 
 Por padrão, o nome do banco criado será `university_dev_felipe`, porém você pode alterar para o nome que desejar, basta trocar o valor da variável `DB_NAME` no seu arquivo `.env`.
 
@@ -41,7 +44,7 @@ Não altere o valor da variável `BASE_URL`, pois é a URL utilizada para coleta
 
 ## Executando o projeto
 
-Agora, é necessário criar o ambiente virtual do Python, bem como instalar as dependencias do projeto. Para isso, certifique-se de estar na raíz do projeto e utilize os seguintes comandos no seu terminal:
+Agora, é necessário criar o ambiente virtual do Python, bem como instalar as dependencias do projeto. Para isso, **certifique-se de estar na raíz do projeto** e utilize os seguintes comandos no seu terminal:
 
 - `python3 -m venv .venv` para criar o ambiente virtual;
 - `source .venv/bin/activate` para ativar o ambiente virtual;
