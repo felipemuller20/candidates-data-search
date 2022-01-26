@@ -23,13 +23,23 @@ A lista fictícia utilizada neste projeto pode ser acessada através [deste link
 
 Este projeto utiliza o banco de dados MySQL, portanto, antes de iniciar, é importante verificar se o MySQL está ativo. No terminal Unix, utilize os comandos:
 
-- `systemctl status mysql` para verificar o status do banco;
-- `systemctl start mysql` para ativar o banco, caso ele esteja desativado.
+- Para verificar o status do banco:
+```bash
+systemctl status mysql
+```
+- Caso esteja desativado, ative o banco:
+```bash
+systemctl start mysql
+```
 
 Agora que o MySQL está ativo, clone o projeto:
 
-- `git clone git@github.com:felipemuller20/candidates-data-search.git`
-- `cd candidates-data-search/`
+```bash
+git clone git@github.com:felipemuller20/candidates-data-search.git
+```
+```bash
+cd candidates-data-search/
+```
 
 ## Configurando variáveis de ambiente
 
@@ -46,15 +56,26 @@ Não altere o valor da variável `BASE_URL`, pois é a URL utilizada para coleta
 
 Agora, é necessário criar o ambiente virtual do Python, bem como instalar as dependencias do projeto. Para isso, **certifique-se de estar na raíz do projeto** e utilize os seguintes comandos no seu terminal:
 
-- `python3 -m venv .venv` para criar o ambiente virtual;
-- `source .venv/bin/activate` para ativar o ambiente virtual;
-- `python3 -m pip install -r dev-requirements.txt` para instalar as dependências do projeto.
+- Crie o ambiente virtual:
+```bash
+python3 -m venv .venv
+```
+- Ative o ambiente virtual:
+```bash
+source .venv/bin/activate
+```
+- Instale as dependências do projeto:
+```bash
+python3 -m pip install -r dev-requirements.txt
+```
 
 Agora que tudo está configurado, precisamos executar o projeto para buscar as informações do site e salvar os dados no banco de dados. No terminal, digital o comando:
 
-- `python3 main.py`
+```bash
+python3 main.py
+```
 
-Pronto! O projeto será executado. Toda captura de informação irá aparecer diretamente no seu terminal e o programa irá encerrar assim que adicionar o ultimo dado do site no banco de dados!
+Pronto! O projeto será executado. Toda captura de informação irá aparecer diretamente no seu terminal e o programa irá encerrar assim que adicionar o ultimo dado do site ao banco de dados!
 
 ---
 
