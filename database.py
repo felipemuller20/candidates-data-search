@@ -35,16 +35,16 @@ def create_table():
     mydb.commit()
 
 
-def add_student(student):
+def add_candidate(candidate):
     mydb.cursor().execute(f"USE {DB_NAME}")
-    name = student.name
-    cpf = student.cpf
-    score = student.score
+    name = candidate.name
+    cpf = candidate.cpf
+    score = candidate.score
     mydb.cursor().execute('INSERT INTO candidates (name, cpf, score) VALUES (%s, %s, %s)', (name, cpf, score))
     mydb.commit()
 
 
-def get_student(cpf):
+def get_candidate(cpf):
     cursor = mydb.cursor(buffered=True)
     cursor.execute(f"USE {DB_NAME}")
     cursor.execute("SELECT cpf FROM candidates WHERE cpf = " + cpf)
