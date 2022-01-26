@@ -16,6 +16,7 @@ mydb = mysql.connector.connect(
   port=PORT
 )
 
+
 def create_database():
     create_database = f"CREATE DATABASE IF NOT EXISTS {DB_NAME}"
     mydb.cursor().execute(create_database)
@@ -40,7 +41,8 @@ def add_candidate(candidate):
     name = candidate.name
     cpf = candidate.cpf
     score = candidate.score
-    mydb.cursor().execute('INSERT INTO candidates (name, cpf, score) VALUES (%s, %s, %s)', (name, cpf, score))
+    mydb.cursor().execute("""INSERT INTO candidates (name, cpf, score)
+    VALUES (%s, %s, %s)""", (name, cpf, score))
     mydb.commit()
 
 

@@ -9,7 +9,6 @@ class Candidate:
             print(f"O CPF {cpf} é invalido")
             self.cpf = None
 
-    
     def cpf_is_valid(self, cpf):
         if len(cpf) == 11:
             return True

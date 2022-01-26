@@ -11,24 +11,22 @@ def fetch(url):
         return None
     if response.status_code != 200:
         return None
-    
+
     return {
         "content": response.text,
         "url": response.url
     }
 
 
-
-def scrape_candidates(html_content): 
+def scrape_candidates(html_content):
     if html_content:
         selector = Selector(html_content["content"])
         candidates_list = []
         for candidate in selector.css("li a::attr(href)").getall():
             candidates_list.append(candidate)
-        
+
         return candidates_list
     return None
-
 
 
 def scrape_next_page_link(html_content):
