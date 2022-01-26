@@ -1,5 +1,5 @@
-import database
-import scraper
+import candidates_data_search.database as database
+import candidates_data_search.scraper as scraper
 from decouple import config
 
 

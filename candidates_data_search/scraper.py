@@ -1,6 +1,6 @@
 import requests
-import utils.get_infos
-from Candidate import Candidate
+import candidates_data_search.utils.get_infos as get_infos
+from candidates_data_search.Candidate import Candidate
 from parsel import Selector
 
 
@@ -43,9 +43,9 @@ def scrape_next_page_link(html_content):
 
 def scrape_candidate_infos(html_content):
     selector = Selector(html_content["content"])
-    infos = utils.get_infos.get_name_and_score(selector)
+    infos = get_infos.get_name_and_score(selector)
     name = infos["name"]
     score = infos["score"]
-    cpf = utils.get_infos.get_candidate_cpf(html_content["url"])
+    cpf = get_infos.get_candidate_cpf(html_content["url"])
     candidate = Candidate(name, cpf, score)
     return candidate
