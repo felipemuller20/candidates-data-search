@@ -28,8 +28,8 @@ Este projeto utiliza o banco de dados MySQL, portanto, antes de iniciar, é impo
 
 Agora que o MySQL está ativo, clone o projeto:
 
-- `git clone git@github.com:felipemuller20/students-data-search.git`
-- `cd students-data-search`
+- `git clone git@github.com:felipemuller20/candidates-data-search.git`
+- `cd candidates-data-search.git`
 
 ## Configurando variáveis de ambiente
 
