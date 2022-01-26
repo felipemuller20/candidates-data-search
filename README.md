@@ -10,57 +10,50 @@ A lista fictícia utilizada neste projeto pode ser acessada através [deste link
 
 ---
 
-# 👀 Visualização
-
-![gif do app funcionando](https://github.com/felipemuller20/recipes-app/blob/master/src/images/appReceitas.gif)
-
----
-
 # ⚛️ Tecnologias utilizadas
 
-- HTML
-- CSS
-- JavaScript
-- React.JS
-- React Hooks
-- Context API
-
----
-
-# ✍️ Habilidades desenvolvidas
-
-- Utilizar a Context API do React para gerenciar estados
-- Utilizar o React Hook useState
-- Utilizar o React Hook useContext
-- Utilizar o React Hook useEffect
-- Criar Hooks customizados
-
-Além disso, neste projeto foi utilizado o ESLint, uma ferramenta para identificar divergências nos padrões de códigos JavaScript, garantindo as boas práticas no código e uma melhor legibilidade.
+- Python
+- MySQL
 
 ---
 
 # 👀 Acessando o projeto
 
-O deploy deste projeto foi realizado via Heroku, e pode ser acessado através [deste link](https://receitas-campeas.herokuapp.com/). **Lembre-se de que ele foi projetado para telas menores (mobile), portanto, para uma melhor visualização, seu acesso deve ser realizado através de um dispositivo móvel.**
+## Configurações iniciais
 
-Para executar o projeto no seu computador:
+Este projeto utiliza o banco de dados MySQL, portanto, antes de iniciar, é importante verificar se o MySQL está ativo. No terminal, utilize os comandos:
 
-- Faça o clone deste repositório utilizando `git clone`;
-- Instale as dependências do projeto com o comando `npm install`;
-- Execute o comando `npm start`.
+- `systemctl status mysql` para verificar o status do banco;
+- `systemctl start mysql` para ativar o banco, caso ele esteja desativado.
+
+Agora que o MySQL está ativo, clone o projeto:
+
+- `git clone git@github.com:felipemuller20/students-data-search.git`
+- `cd students-data-search`
+
+## Configurando variáveis de ambiente
+
+O projeto utiliza algumas variáveis de ambiente que precisam ser configuradas. Para isso, renomeie o arquivo `.env.dev` para `.env`. Este arquivo possui as informações utilizadas para realizar a conexão com o seu banco de dados MySQL. Portanto, se necessário, altere o valor das variáveis `DB_HOST`, `DB_USER`, `DB_PASSWORD` e `PORT` para os valores correspondentes à sua conexão.
+
+Por padrão, o nome do banco criado será `university_dev_felipe`, porém você pode alterar para o nome que desejar, basta trocar o valor da variável `DB_NAME` no seu arquivo `.env`.
+
+Não altere o valor da variável `BASE_URL`, pois é a URL utilizada para coletar as informações neste projeto.
+
+## Executando o projeto
+
+Agora, é necessário criar o ambiente virtual do Python, bem como instalar as dependencias do projeto. Para isso, certifique-se de estar na raíz do projeto e utilize os seguintes comandos no seu terminal:
+
+- `python3 -m venv .venv` para criar o ambiente virtual;
+- `source .venv/bin/activate` para ativar o ambiente virtual;
+- `python3 -m pip install -r dev-requirements.txt` para instalar as dependências do projeto.
+
+Agora que tudo está configurado, precisamos executar o projeto para buscar as informações do site e salvar os dados no banco de dados. No terminal, digital o comando:
+
+- `python3 main.py`
+
+Pronto! O projeto será executado. Toda captura de informação irá aparecer diretamente no seu terminal e o programa irá encerrar assim que adicionar o ultimo dado do site no banco de dados!
 
 ---
 
-# 💚 Agradecimentos especiais
-
-Este projeto foi realizado em conjunto com os amigos [André Barroso](https://www.linkedin.com/in/andrebarroso1/), [Michael Peterson](https://www.linkedin.com/in/michael-petterson/) e [Tiago Santos](https://www.linkedin.com/in/tiago-nogueira-dos-santos/). Todos participaram ativamente do início ao fim do projeto. 
-
-Sem dúvidas fortalecemos muito nosso senso de equipe e guardo um carinho enorme por todos eles.
-
-**OBS:** O nome do aplicativo foi uma homenagem carinhosa ao **Michael Peterson**, o nosso Mike.
-
-# 👥 Autores
+# 👥 Autor
 - [Felipe Muller](https://github.com/felipemuller20)
-- [André Barroso](https://github.com/AndreBarroso)
-- [Michael Peterson](https://github.com/michael-petterson-06)
-- [Tiago Santos](https://github.com/tiagobalsas)
