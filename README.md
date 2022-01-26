@@ -8,6 +8,8 @@ Existe também uma verificação por CPF para descobrir se os dados de uma pesso
 
 A lista fictícia utilizada neste projeto pode ser acessada através [deste link](https://sample-university-site.herokuapp.com/).
 
+Para padronização do código, foi utilizado o Linter Flake8.
+
 ---
 
 # ⚛️ Tecnologias utilizadas
