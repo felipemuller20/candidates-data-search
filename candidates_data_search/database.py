@@ -49,5 +49,12 @@ def add_candidate(candidate):
 def get_candidate(cpf):
     cursor = mydb.cursor(buffered=True)
     cursor.execute(f"USE {DB_NAME}")
-    cursor.execute("SELECT cpf FROM candidates WHERE cpf = " + cpf)
+    cursor.execute(f"SELECT cpf FROM candidates WHERE cpf = {cpf}")
     return cursor.fetchone()
+
+
+def remove_candidate(cpf):
+    cursor = mydb.cursor(buffered=True)
+    cursor.execute(f"USE {DB_NAME}")
+    cursor.execute(f"DELETE FROM candidates WHERE cpf = {cpf}")
+    mydb.commit()
