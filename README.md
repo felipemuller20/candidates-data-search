@@ -4,7 +4,7 @@ O projeto **Candidates Data Search** consiste em uma aplicação desenvolvida em
 
 É realizada a higienização dos dados, de forma que o banco de dados não salve caracteres especiais, acentos ou espaços em branco a mais. Também é realizada a validação dos CPFs, de forma que os dados da pessoa sejam salvos apenas se o CPF for válido numericamente.
 
-Existe também uma verificação por CPF para descobrir se os dados de uma pessoa já foram salvos no banco de dados, impedindo que uma mesma pessoa tenha mais de um registro.
+Existe também uma verificação por CPF para descobrir se os dados de uma pessoa já foram salvos no banco de dados anteriormente, impedindo que uma mesma pessoa tenha mais de um registro.
 
 A lista fictícia utilizada neste projeto pode ser acessada através [deste link](https://sample-university-site.herokuapp.com/).
 
