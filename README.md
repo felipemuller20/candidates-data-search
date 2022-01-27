@@ -21,7 +21,7 @@ Para padronização do código, foi utilizado o Linter Flake8.
 
 # 👀 Acessando o projeto
 
-## Configurações iniciais
+## ⚙️ Configurações iniciais
 
 Este projeto utiliza o banco de dados MySQL, portanto, antes de iniciar, é importante verificar se o MySQL está ativo. No terminal Unix, utilize os comandos:
 
@@ -43,7 +43,7 @@ git clone git@github.com:felipemuller20/candidates-data-search.git
 cd candidates-data-search/
 ```
 
-## Configurando variáveis de ambiente
+## ⚙️ Configurando variáveis de ambiente
 
 O projeto utiliza algumas variáveis de ambiente que precisam ser configuradas. Para isso:
 
@@ -54,7 +54,7 @@ Por padrão, o nome do banco criado será `university_dev_felipe`, porém você 
 
 Não altere o valor da variável `BASE_URL`, pois é a URL utilizada para coletar as informações neste projeto.
 
-## Executando o projeto
+## ▶️ Executando o projeto
 
 Agora, é necessário criar o ambiente virtual do Python, bem como instalar as dependencias do projeto. Para isso, **certifique-se de estar na raíz do projeto** e utilize os seguintes comandos no seu terminal:
 
