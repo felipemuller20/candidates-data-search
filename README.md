@@ -23,7 +23,7 @@ Para padronização do código, foi utilizado o Linter Flake8.
 
 ## ⚙️ Configurações iniciais
 
-Este projeto utiliza o banco de dados MySQL, portanto, antes de iniciar, é importante verificar se o MySQL está ativo. No terminal Unix, utilize os comandos:
+Este projeto utiliza o banco de dados MySQL, portanto, antes de iniciar, é importante verificar se o MySQL está ativo na sua máquina. No terminal Unix, utilize os comandos:
 
 - Para verificar o status do banco:
 ```bash
