@@ -47,7 +47,7 @@ cd candidates-data-search/
 
 O projeto utiliza algumas variáveis de ambiente que precisam ser configuradas. Para isso:
 
-- **Renomeie o arquivo `.env.dev` para `.env`**. Este arquivo possui as informações utilizadas para realizar a conexão com o seu banco de dados MySQL;
+- **Renomeie o arquivo `.env.dev` para `.env`**. Este arquivo possui as informações necessárias para realizar a conexão com o seu banco de dados MySQL;
 - Se necessário, **altere o valor das variáveis `DB_HOST`, `DB_USER`, `DB_PASSWORD` e `PORT` para os valores correspondentes à sua conexão**.
 
 Por padrão, o nome do banco criado será `university_dev_felipe`, porém você pode alterar para o nome que desejar, basta trocar o valor da variável `DB_NAME` no seu arquivo `.env`.
