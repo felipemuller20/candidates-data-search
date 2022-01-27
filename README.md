@@ -78,7 +78,7 @@ source .venv/bin/activate
 python3 -m pip install -r dev-requirements.txt
 ```
 
-Agora que tudo está configurado, precisamos executar o projeto para buscar as informações do site e salvar os dados no banco de dados. No terminal, digital o comando:
+Agora que tudo está configurado, precisamos executar o projeto para buscar as informações do site e salvar os dados no banco de dados. No terminal, digite o comando na raíz do projeto:
 
 ```bash
 python3 main.py
